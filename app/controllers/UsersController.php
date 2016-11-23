@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: artemdegtarev
- * Date: 23.11.16
- * Time: 13:12
- */
 class UsersController
 {
     public static function users(){
