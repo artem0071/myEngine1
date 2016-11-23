@@ -1,4 +1,5 @@
 <?php
+$start = microtime(true);
 
 function dd($data){
 
@@ -25,3 +26,4 @@ echo '<br/>';
 
 
 
+echo 'Time of script'.(microtime(true) - $start).' sec.';
