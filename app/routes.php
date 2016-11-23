@@ -2,13 +2,15 @@
 
 return [
 
-    '' => 'app/controllers/index.php',
-    'about' => 'app/controllers/about.php',
-    'users' => 'app/controllers/users.php',
-    'user' => 'app/controllers/user.php',
-    'add' => 'app/controllers/add.php',
+    ''=> 'PagesController@index',
+    'about'=> 'PagesController@about',
+    'users' => 'PagesController@users',
 
-    '404' => 'app/controllers/404.php'
+    'user' => 'PagesController@user',
 
+
+    '404' => 'PagesController@notFound',
+    
+    'addUser' => 'InsertController@addUser'
 
 ];

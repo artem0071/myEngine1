@@ -1,10 +1,6 @@
 <?php
-require 'core/Router.php';
-require 'core/Request.php';
-require 'core/App.php';
-require 'core/DB/Connection.php';
-require 'core/DB/QueryBuilder.php';
-
-$config = require 'config.php';
-
-$DB = new QueryBuilder(Connection::make($config['database']));
+spl_autoload_register(function ($class_name) {
+    if (file_exists('core/'. $class_name . '.php')) include 'core/'. $class_name . '.php';
+    elseif (file_exists('core/DB/'. $class_name . '.php')) include 'core/DB/'. $class_name . '.php';
+    elseif (file_exists('app/controllers/'. $class_name . '.php')) include 'app/controllers/'. $class_name . '.php';
+});

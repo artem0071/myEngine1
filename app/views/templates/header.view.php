@@ -4,3 +4,5 @@
 <a href="/users">users</a>
 <a href="/user/admin">admin</a>
 <a href="/user/test1">test1</a>
+<br/>
+<a href="/search">search</a>

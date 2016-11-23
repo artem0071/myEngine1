@@ -10,7 +10,7 @@
     <? endforeach; ?>
 </ul>
 
-<form method="post" autocomplete="off" action="/add">
+<form method="post" autocomplete="off" action="/addUser">
 
     <input type="text" name="name" placeholder="name">
     <button>SEND</button>

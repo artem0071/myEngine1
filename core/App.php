@@ -4,6 +4,12 @@ class App
 {
     public $direct;
     public $param;
+    
+    public static function DB(){
+
+        $config = require 'config.php';
+        return new QueryBuilder(Connection::make($config['database']));
+    }
 
     public function __construct($direct,$param)
     {
@@ -11,12 +17,24 @@ class App
         $this->param = $param;
     }
 
-    public function render(){
+    public function render($App){
 
-        return $this->direct;
+        $mix = explode('@', $this->direct);
+        $controller = $mix[0];
+        $method = $mix[1];
 
+        $controller = new $controller;
+
+        $controller::$method($App);
 
     }
+
+//    public function render(){
+//
+//        return $this->direct;
+//
+//
+//    }
 
     
 }

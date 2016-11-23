@@ -8,18 +8,20 @@ function dd($data){
 }
 require 'core/bootstrap.php';
 
-$rout = new Router(require 'app/routes.php');
+$Rout = new Router(require 'app/routes.php');
 
-$app = new App($rout->direct,$rout->param);
+$App = new App($Rout->direct,$Rout->param);
 
-require $app->render();
+$App->render($App);
 
 
 /////*  =============================================   */
 
-dd($rout);
+dd($Rout);
 echo '<br/>';
-dd($app);
+dd($App);
+echo '<br/>';
+
 
 
 
