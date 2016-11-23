@@ -4,6 +4,7 @@ class App
 {
     public $direct;
     public $param;
+    public $lang = 'en'; // язык по умолчанию
     
     public static function DB(){
 
@@ -29,12 +30,6 @@ class App
 
     }
 
-//    public function render(){
-//
-//        return $this->direct;
-//
-//
-//    }
 
     
 }

@@ -10,7 +10,7 @@ class UsersController
 
     public static function user($App){
 
-        $user = App::DB()->selectUser('Users', $App->param);
+        $user = App::DB()->selectUser('Users', $App->param[0]);
 
         if (count($user) == 0) header('Location: /search');
 
