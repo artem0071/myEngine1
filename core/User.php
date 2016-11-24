@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: artemdegtarev
- * Date: 24.11.16
- * Time: 11:53
- */
 class User
 {
     /* USER STATUS:
@@ -34,6 +28,7 @@ class User
         // если установлены куки
         if (isset($cookie['Login']) && isset($cookie['Pass']) && count($cookie) != 0 ){
 
+            // если установлена сессия 
             if (isset($_SESSION['Login']) && isset($_SESSION['Pass']) && isset($_SESSION['Status']) && isset($_SESSION['Lang'])) {
 
                 $this->Login = $_SESSION['Login'];
@@ -66,14 +61,10 @@ class User
                     $_SESSION['Status'] = $status;
 
                 } else {
-
                     self::newUser($server);
-
                 }
             }
-
         } else{
-
             self::newUser($server);
         }
     }
@@ -84,7 +75,6 @@ class User
         setcookie('Login', '', -1 );
         setcookie('Pass', '', -1 );
         session_destroy();
-
 
     }
 

@@ -20,7 +20,6 @@ class Router
         $this->result = $result;
 
         $page = $result[0];
-//        $this->param = ( isset($result[1]) ? $result[1] : 'main');
         if (!isset($result[1])) $this->param[] = 'main';
         else {
             $count = count($this->result);
