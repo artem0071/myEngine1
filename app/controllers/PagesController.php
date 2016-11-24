@@ -3,10 +3,9 @@
 class PagesController
 {
     
-    public static function index(){
+    public static function index($App){
 
-        $words = array('1' => '1', '2' => '2', '3' => '3');
-
+        $words = $App->words;
         require 'app/views/index.view.php';
     }
     

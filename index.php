@@ -15,7 +15,7 @@ $User = new User($_COOKIE,$_SERVER);
 
 $Rout = new Router(require 'app/routes.php');
 
-$App = new App($Rout->direct,$Rout->param);
+$App = new App($Rout->direct,$Rout->param, $User->Lang);
 
 $App->render($App);
 
