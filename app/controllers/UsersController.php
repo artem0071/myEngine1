@@ -38,6 +38,8 @@ class UsersController
         setcookie('Login','',-1);
         setcookie('Pass','',-1);
 
+        session_destroy();
+
         header('Location: /');
 
     }

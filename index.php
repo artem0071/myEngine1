@@ -1,6 +1,8 @@
 <?php
 $start = microtime(true);
 
+session_start();
+
 function dd($data){
 
     echo '<pre>';
@@ -19,7 +21,7 @@ $App->render($App);
 
 
 /////*  =============================================   */
-dd($_COOKIE);
+dd($_SESSION);
 dd($User);
 echo '<br/>';
 dd($Rout);
