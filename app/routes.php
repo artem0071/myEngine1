@@ -11,10 +11,17 @@ return [
     'users' => 'UsersController@users',
     'user' => 'UsersController@user',
     'search' => 'UsersController@search',
+    'profile' => 'UsersController@profile',
 
+    'registr' => 'UsersController@registr',
+    'login' => 'UsersController@login',
+    'exit' => 'UsersController@toExit',
+    
+    'logUser' => 'UsersController@logUser',
 
     // INSERTS
     'addUser' => 'InsertController@addUser',
+    'regUser' => 'InsertController@regUser',
     
     // REDIRECTS
     'searchUser' => 'RedirectController@searchUser',

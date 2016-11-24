@@ -43,4 +43,27 @@ class QueryBuilder
             //
         }
     }
+
+    public function selectMyUser($table,$login,$pass)
+    {
+        $sql = "SELECT * FROM {$table} where `User_Login` = ? AND `User_Pass` = ?";
+        $statement = $this->pdo->prepare($sql);
+        $statement->execute(array($login, $pass));
+
+        return json_decode(json_encode($statement->fetchAll(PDO::FETCH_CLASS)),true);
+        
+////        $statement = $this->pdo->prepare("SELECT * FROM {$table} where User_Login = :User_Login AND  User_Pass = :User_Pass");
+////        $statement->execute(array(':User_Login' => $login, ':User_Pass' => $pass));
+//
+//        try {
+//            $statement = $this->pdo->prepare($sql);
+//
+//            $statement->execute(array($login,$pass));
+//        } catch (Exception $e) {
+//            //
+//        }
+//
+//        return $statement;
+//        return json_decode(json_encode($statement->fetchAll(PDO::FETCH_CLASS)),true);
+    }
 }
